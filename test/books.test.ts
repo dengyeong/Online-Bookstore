@@ -22,23 +22,23 @@ describe('Bookstore API', () => {
   });
 
   it('GET /api/books/:id - should return 404 for non-existent book', async () => {
-    const res = await request(app).get('/api/books/999');
+    const res = await request(app).get('/api/books/-1');
     expect(res.status).toBe(404);
     expect(res.body).toHaveProperty('error');
   });
 
   it('POST /api/books - should create a new book', async () => {
     const newBook = {
-      title: 'Test Driven Development',
-      author: 'Kent Beck',
-      genre: 'Programming',
+      title: 'Detective Conan',
+      author: 'Gosho Aoyama',
+      genre: 'Mystery',
       isbn: '1234567899',
-      description: 'Red, Green, Refactor.'
+      description: 'Best Detective Manga.'
     };
     const res = await request(app).post('/api/books').send(newBook);
     expect(res.status).toBe(201);
     expect(res.body).toHaveProperty('id');
-    expect(res.body.title).toBe('Test Driven Development');
+    expect(res.body.title).toBe('Detective Conan');
   });
 
   it('POST /api/books - should return 400 for invalid input', async () => {
