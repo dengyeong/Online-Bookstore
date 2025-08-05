@@ -1,0 +1,49 @@
+{
+  "name": "online-bookstore",
+  "version": "1.0.0",
+  "main": "app.ts",
+  "scripts": {
+    "test": "jest",
+    "start": "ts-node-dev src/app.ts",
+    "clean": "if exist dist (rmdir /s /q dist) && mkdir dist",
+    "replace-assets": "xcopy src\\config\\server.config.json dist\\ /E /I /Y",
+    "build": "npm run clean && npm run replace-assets && webpack  --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dengyeong/Online-Bookstore.git"
+  },
+  "keywords": [],
+  "author": "Tee Deng Yeong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dengyeong/Online-Bookstore/issues"
+  },
+  "homepage": "https://github.com/dengyeong/Online-Bookstore#readme",
+  "description": "",
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.1.0",
+    "@types/supertest": "^6.0.3",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.8",
+    "jest": "^30.0.5",
+    "supertest": "^7.1.4",
+    "ts-jest": "^29.4.1",
+    "ts-loader": "^9.5.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.2",
+    "webpack": "^5.101.0",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.2",
+    "express": "^5.1.0",
+    "reflect-metadata": "^0.2.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "tsyringe": "^4.10.0"
+  }
+}
