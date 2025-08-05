@@ -9,7 +9,9 @@ const app = express();
 
 app.use(express.json());
 app.use('/api/books', bookRoutes);
-setupSwagger(app);
+if (process.env.NODE_ENV !== 'production') {
+    setupSwagger(app);
+}
 
-const PORT = config.port || 3000;
+const PORT = config.port;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

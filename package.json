@@ -4,7 +4,9 @@
   "main": "app.ts",
   "scripts": {
     "test": "jest",
-    "start": "ts-node-dev src/app.ts"
+    "start": "ts-node-dev src/app.ts",
+    "prebuild": "if exist dist (rmdir /s /q dist) && mkdir dist && xcopy src\\config\\server.config.json dist /E /I /Y",
+    "build": "npm run prebuild && webpack  --mode production"
   },
   "repository": {
     "type": "git",
@@ -28,8 +30,11 @@
     "jest": "^30.0.5",
     "supertest": "^7.1.4",
     "ts-jest": "^29.4.1",
+    "ts-loader": "^9.5.2",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "webpack": "^5.101.0",
+    "webpack-cli": "^6.0.1"
   },
   "dependencies": {
     "class-transformer": "^0.5.1",
