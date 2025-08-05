@@ -11,6 +11,13 @@ This server serves as a mock server that mimics an Online Bookstore API backend 
 - Retrieve a book by its ID
 - Add a new book
 
+## 📦 Installation
+Install all dependencies by running:
+
+```bash
+npm install
+```
+
 ## ⚙️ Configuration
 
 The server relies on a `server.config.json` file to define HTTP server port.
@@ -48,7 +55,7 @@ This creates the `server.min.js` in the `dist` folder using `webpack`
 
 ## 🖥️ Usage
 
-* **To run the source version**, use `npm run start` in the project root directory.
+* **To run the source version**, use `npm run start` in the project root directory. Before running the source version, make sure the step described in `Installation` is performed.
 * **To run the bundled version**, use `node dist/server.min.js` in the project root directory.
 
 
